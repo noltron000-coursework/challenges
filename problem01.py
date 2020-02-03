@@ -9,25 +9,20 @@
 # results = [3, 7] or [6, 4] or [8, 2]
 
 # == PSEUDOCODE ==
-# create function named two_sum,
-# that takes an array,
-# and a target number, called t.
+def two_sum(array, t):
+	# pairs will hold what valid pairs must be to reach t.
+	pairs = set()
 
-# 	create a new, empty set called pairs.
-# 	it will hold what its pair must be to reach t.
+	# crawl through the array by each number
+	for number in array:
+		# get what this number's pair must be to be a solution
+		pair = number - t
+		# check this number to see if its a pair of another
+		if number in pairs:
+			return pair, number
+		else:
+			# otherwise add the needed number into pairs
+			pairs.add(pair)
 
-# 	loop through each number in the array,
-# 	in order of each entry's index.
-
-
-# 		subtract t from the number to get its pair.
-
-# 		check if the paired number is in the pairs set.
-
-# 			if so, we have our pair. return the two numbers.
-
-# 		otherwise, add the potential pair into the pairs set.
-
-# 	if the loop ends, there is no pair in the original array.
-# 	at this point one could return an error,
-# 	or a value that represents nothing
+	# no matches
+	return None
