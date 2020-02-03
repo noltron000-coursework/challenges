@@ -16,7 +16,7 @@ def two_sum(array, t):
 	# crawl through the array by each number
 	for number in array:
 		# get what this number's pair must be to be a solution
-		pair = number - t
+		pair = t - number
 		# check this number to see if its a pair of another
 		if number in pairs:
 			return pair, number
@@ -26,3 +26,10 @@ def two_sum(array, t):
 
 	# no matches
 	return None
+
+# == TEST EXAMPLE ==
+array = [5, 3, 6, 8, 2, 4, 7]
+# (thus n = 7)
+t = 10
+# results = [3, 7] or [6, 4] or [8, 2]
+print(two_sum(array, t))
