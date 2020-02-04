@@ -8,9 +8,18 @@
 # k = 3
 # results = [6, 8, 7]
 
-# == PSEUDOCODE ==
-def find_top_k(array, k):
+# == CODE ==
+def get_top_k(array, k):
 	# create a sorted copy of the array
-	array = array[:].sort()
+	array = array[:]
+	array.sort()
+	print(array)
 	# return the final k values of the array.
-	return array[array.length - k:]
+	return array[len(array) - k:]
+
+# == TEST EXAMPLE ==
+array = [5, 1, 3, 6, 8, 2, 4, 7]
+# (thus n = 8)
+k = 3
+# results = [6, 8, 7]
+print(get_top_k(array, k))
