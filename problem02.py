@@ -9,10 +9,8 @@
 # results = [6, 8, 7]
 
 # == PSEUDOCODE ==
-# create a new function that takes in an array,
-# and a number of output values, k.
-
-# 	create a new array that contains the sorted input.
-
-# 	return a slice of the array from
-# 	index (length - k) to length.
+def find_top_k(array, k):
+	# create a sorted copy of the array
+	array = array[:].sort()
+	# return the final k values of the array.
+	return array[array.length - k:]
