@@ -8,7 +8,7 @@
 # t = 10
 # results = [3, 7] or [6, 4] or [8, 2]
 
-# == PSEUDOCODE ==
+# == CODE ==
 def two_sum(array, t):
 	# pairs will hold what valid pairs must be to reach t.
 	pairs = set()
