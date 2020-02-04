@@ -8,7 +8,16 @@
 # t = 20
 # results = [13, 6] or [4, 17] or [5, 14]
 
-# == PSEUDOCODE ==
+# naive approach
+def get_closest_pair_naive(a, b, t):
+	best_pair = [a[0], b[0]]
+	for i in a:
+		for j in b:
+			if abs(t - sum(best_pair)) < abs(t - i - j):
+				best_pair = [i, j]
+	return best_pair
+
+# == CODE ==
 def get_closest_pair(a, b, t):
 	a = a[:]
 	b = b[:]
@@ -52,5 +61,4 @@ a = [9, 13, 1, 8, 12, 4, 0, 5]
 b = [3, 17, 4, 14, 6]
 t = 20
 # results = [13, 6] or [4, 17] or [5, 14]
-
 print(get_closest_pair(a, b, t))
