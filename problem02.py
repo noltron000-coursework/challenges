@@ -13,7 +13,6 @@ def get_top_k(array, k):
 	# create a sorted copy of the array
 	array = array[:]
 	array.sort()
-	print(array)
 	# return the final k values of the array.
 	return array[len(array) - k:]
 
