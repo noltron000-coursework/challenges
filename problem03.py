@@ -23,10 +23,21 @@
 # 	create a pointer to the largest item in b,
 # 	based on the index of b or keeping track of it
 
+# 	create an array of size two containing
+# 	the current value of those two pointers.
+# 	call the array best_pair;
+# 	this array will be updated with better pairs
+# 	as this runs, based on their sum's difference to t.
+
 # 	loop while pointer a can get larger,
 # 	or pointer b can get smaller,
 
 # 		get the sum of pointers a and b.
+
+# 		check if the current pointers' sum are better than
+# 		best_pair's sum.
+
+# 			if it is, replace best_pair with the new best pair.
 
 # 		if the sum is larger than t,
 
@@ -49,5 +60,8 @@
 # 		otherwise, if they are equal
 
 # 			that's great! we can flat out return the pair right away.
+
+# 	the loop broke if it ever got here.
+# 	there is no exact match so just return best_pair.
 
 # == TEST EXAMPLE ==
