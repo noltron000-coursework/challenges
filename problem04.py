@@ -23,3 +23,26 @@
 # 	'BernieOrBust'
 # ])
 # results: ['GodIsLove', 'DogeCoin']
+
+# == PSEUDOCODE ==
+# define a function that takes in three parameters:
+# a new handle for a username,
+# a list of handles to match up from,
+# and a number of matches to be returned (default 1).
+
+# 	create an object called best_name,
+# 	which will always be sorted by an entry's score.
+# 	it will contain a handle, and its associated score
+# 	with new_handle.
+
+# 		loop through each name in the handles list.
+
+# 			set a variable, score, equal to get_score() helper
+# 			function to get the handle's associated score.
+
+# 			using add_item() helper function,
+# 			add the score and handle to the best_name object,
+# 			ensuring sorted order.
+
+# 		return the best k items from the best_names object.
+# 		this should be easy to do since the object is sorted.
