@@ -13,7 +13,7 @@ def get_closest_pair_naive(a, b, t):
 	best_pair = [a[0], b[0]]
 	for i in a:
 		for j in b:
-			if abs(t - sum(best_pair)) < abs(t - i - j):
+			if abs(t - sum(best_pair)) > abs(t - i - j):
 				best_pair = [i, j]
 	return best_pair
 

@@ -12,7 +12,7 @@
 def two_sum_naive(array, t):
 	for i in array:
 		for j in array:
-			if i + j == t:
+			if i != j and i + j == t:
 				return i, j
 
 # == CODE ==
