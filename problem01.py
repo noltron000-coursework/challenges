@@ -17,19 +17,19 @@ def two_sum_naive(array, t):
 
 # == CODE ==
 def two_sum(array, t):
-	# pairs will hold what valid pairs must be to reach t.
-	pairs = set()
+	# checked_values holds valid complements used to reach t.
+	checked_values = set()
 
 	# crawl through the array by each number
 	for number in array:
-		# get what this number's pair must be to be a solution
-		pair = t - number
-		# check this number to see if its a pair of another
-		if number in pairs:
-			return pair, number
+		# whats this number's complement to be a solution?
+		complement = t - number
+		# is this number a valid complement of another?
+		if complement in checked_values:
+			return complement, number
 		else:
-			# otherwise add the needed number into pairs
-			pairs.add(pair)
+			# otherwise add the needed number into checked_values
+			checked_values.add(number)
 
 	# no matches
 	return None

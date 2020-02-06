@@ -38,14 +38,10 @@ def get_closest_pair(a, b, t):
 
 		# increment pointer a
 		if sum(current_pair) < t:
-			if index_a == len(a) - 1:
-				break
 			index_a += 1
 
 		# increment pointer b
 		elif sum(current_pair) > t:
-			if index_b == 0:
-				break
 			index_b -= 1
 
 		# found an exact match;
