@@ -41,6 +41,11 @@ class SortedArrayObject:
 	def get_max(self, k=1):
 		return self.list[-k:]
 
+class HeapingObject:
+	def __init___(self):
+		# self.heap = 
+		print('asdf')
+
 # define a function that takes in three parameters:
 # a new handle for a username,
 # a list of handles to match up from,
@@ -66,31 +71,13 @@ def most_similar_handles(handle, other_handles, k = 1):
 	# this should be easy to do since the object is sorted.
 	return handles_by_score.get_max(k)
 
-# def get_score_single(handle1, handle2):
-# 	# helper function
-# 	def populate(handle):
-# 		char_histogram = {}
-# 		for char in handle1:
-# 			if char in char_histogram:
-# 				char_histogram[char] += 1
-# 			else:
-# 				char_histogram[char] = 1
-
-# 	histo1 = populate(handle1)
-# 	histo2 = populate(handle2)
-
-# 	score = 0
-# 	for char in smaller_histogram:
-# 		if char in 
 
 def get_score_single(handle1, handle2):
-
 	# helper function
 	def populate_set(handle):
 		char_set = set()
-		for char in handle1:
+		for char in handle:
 			char_set.add(char)
-		print(char_set)
 		return char_set
 
 	# get basic sets
@@ -99,11 +86,8 @@ def get_score_single(handle1, handle2):
 	# find score modifiers based on set info
 	bonuses = set1.intersection(set2)
 	penalties = set1.symmetric_difference(set2)
-	print(bonuses)
-	print(penalties)
 	# get total score
 	return len(bonuses) - len(penalties)
-
 
 # == TEST EXAMPLE ==
 new_handle = 'iLoveDogs'
@@ -117,4 +101,4 @@ handles = set([
 	'BernieOrBust'
 ])
 # results: ['GodIsLove', 'DogeCoin']
-print(most_similar_handles(new_handle, handles))
+print(most_similar_handles(new_handle, handles, 2))
