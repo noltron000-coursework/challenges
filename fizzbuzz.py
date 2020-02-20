@@ -6,6 +6,7 @@
 # -> fizzbuzzified list of ranges (start...finish)
 
 def fizz_buzz(start, end):
+	
 	# create an array:
 	# a range of integers from start to finish.
 	
@@ -18,18 +19,20 @@ def fizz_buzz(start, end):
 
 
 def foobar(number):
-	# if number divisible by 15:
-
-		# return "FizzBuzz"
-
-	# else if number divisible by 5:
+	# create empty string, string
 	
-		# return "Buzz"
+	# if number divisible by 3:
 
-	# else if number divisible by 3:
+		# add "Fizz" to string
 
-		# return "Fizz"
-
-	# else:
+	# if number divisible by 5:
+	
+		# add "Buzz" to string
+		
+	# if string is empty:
 	
 		# return number
+	
+	# else
+		
+		# return string
