@@ -5,34 +5,23 @@
 # returns:
 # -> fizzbuzzified list of ranges (start...finish)
 
+# RECURSIVE OPTIONS
+
 def fizz_buzz(start, end):
-	
-	# create an array:
-	# a range of integers from start to finish.
-	
-	# loop through each index in array:
-
-		# run foobar each value associated with index,
-		# and replace value with the foobar return.
-
-	# return the final array
-
+	results = list(range(start, end + 1))
+	for index, value in enumerate(results):
+		results[index] = foobar(value)
+	return results
 
 def foobar(number):
-	# create empty string, string
-	
-	# if number divisible by 3:
+	string = ''
+	if number % 3 == 0:
+		string += 'Fizz'
+	if number % 5 == 0:
+		string += 'Buzz'
+	if string != '':
+		return string
+	else:
+		return number
 
-		# add "Fizz" to string
-
-	# if number divisible by 5:
-	
-		# add "Buzz" to string
-		
-	# if string is empty:
-	
-		# return number
-	
-	# else
-		
-		# return string
+print(fizz_buzz(1, 20))
