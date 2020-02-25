@@ -5,13 +5,22 @@
 # returns:
 # -> fizzbuzzified list of ranges (start...finish)
 
-# RECURSIVE OPTIONS
-
-def fizz_buzz(start, end):
+def _fizz_buzz_iterative(start, end):
 	results = list(range(start, end + 1))
 	for index, value in enumerate(results):
 		results[index] = foobar(value)
 	return results
+
+def _fizz_buzz_recursive(start, end, results=None):
+	if results is None:
+		results = []
+
+	results.append(foobar(start))
+
+	if start == end:
+		return results
+	else:
+		return _fizz_buzz_recursive(start+1, end, results)
 
 def foobar(number):
 	string = ''
@@ -24,4 +33,5 @@ def foobar(number):
 	else:
 		return number
 
-print(fizz_buzz(1, 20))
+print(_fizz_buzz_iterative(1, 20))
+print(_fizz_buzz_recursive(1, 20))
