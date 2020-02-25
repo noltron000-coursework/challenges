@@ -69,7 +69,6 @@ t9_num_to_letters = {
 	],
 }
 
-
 def t9_letters(rmn_string, prv_combos=None):
 	if prv_combos is None:
 		prv_combos = ['']
