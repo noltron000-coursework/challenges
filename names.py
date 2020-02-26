@@ -33,17 +33,17 @@ def find_indexes(instructors, target):
 		return None, None
 
 	# find location of first target occurance
-	start_index = search_index
-	while instructors[start_index - 1] == target:
-		start_index -= 1
+	first_index = search_index
+	while instructors[first_index - 1] == target:
+		first_index -= 1
 	
 	# find location of final target occurance
-	end_index = search_index
-	while instructors[end_index + 1] == target:
-		end_index += 1
+	final_index = search_index
+	while instructors[final_index + 1] == target:
+		final_index += 1
 		
 	# return locations of first and last target
-	return start_index, end_index
+	return first_index, final_index
 
 
 def binary_search(instructors, target, min_index=None, max_index=None):
@@ -71,6 +71,7 @@ def binary_search(instructors, target, min_index=None, max_index=None):
 		return binary_search(instructors, target, med_index+1, max_index)
 	else:
 		raise ValueError('weird!')
+
 
 print(find_indexes(
 	make_instructors, 'Braus'
