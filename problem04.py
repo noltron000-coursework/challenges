@@ -24,25 +24,81 @@
 # ])
 # results: ['GodIsLove', 'DogeCoin']
 
-# == PSEUDOCODE ==
+
+# == CODE ==
+class SortedArrayObject:
+	def __init__(self):
+		self.list = []
+
+	def add(self, item):
+		# convert list to immutable tuple
+		item = tuple(item)
+		# add item to array
+		self.list.append(item)
+		# sort by entry's score
+		self.list.sort(key = lambda entry: entry[0])
+
+	def get_max(self, k=1):
+		return self.list[-k:]
+
+class HeapingObject:
+	def __init___(self):
+		# self.heap = 
+		print('asdf')
+
 # define a function that takes in three parameters:
 # a new handle for a username,
 # a list of handles to match up from,
 # and a number of matches to be returned (default 1).
+def most_similar_handles(handle, other_handles, k = 1):
+	# create an object called best_names,
+	# which will always be sorted by an entry's score.
+	# it will contain a handle, and its associated score
+	# with new_handle.
+	handles_by_score = SortedArrayObject()
 
-# 	create an object called best_name,
-# 	which will always be sorted by an entry's score.
-# 	it will contain a handle, and its associated score
-# 	with new_handle.
+	# loop through each name in the handles list.
+	for other_handle in other_handles:
+		# set a variable, score, equal to get_score() helper
+		# function to get the handle's associated score.
+		score = get_score_single(handle, other_handle)
+		# using add_item() helper function,
+		# add the score and handle to the best_name object,
+		# ensuring sorted order.
+		handles_by_score.add([score, other_handle])
 
-# 		loop through each name in the handles list.
+	# return the best k items from the best_names object.
+	# this should be easy to do since the object is sorted.
+	return handles_by_score.get_max(k)
 
-# 			set a variable, score, equal to get_score() helper
-# 			function to get the handle's associated score.
 
-# 			using add_item() helper function,
-# 			add the score and handle to the best_name object,
-# 			ensuring sorted order.
+def get_score_single(handle1, handle2):
+	# helper function
+	def populate_set(handle):
+		char_set = set()
+		for char in handle:
+			char_set.add(char)
+		return char_set
 
-# 		return the best k items from the best_names object.
-# 		this should be easy to do since the object is sorted.
+	# get basic sets
+	set1 = populate_set(handle1)
+	set2 = populate_set(handle2)
+	# find score modifiers based on set info
+	bonuses = set1.intersection(set2)
+	penalties = set1.symmetric_difference(set2)
+	# get total score
+	return len(bonuses) - len(penalties)
+
+# == TEST EXAMPLE ==
+new_handle = 'iLoveDogs'
+k = 2
+handles = set([
+	'DogeCoin',
+	'YangGang2020',
+	'HodlForLife',
+	'fakeDonaldDrumpf',
+	'GodIsLove',
+	'BernieOrBust'
+])
+# results: ['GodIsLove', 'DogeCoin']
+print(most_similar_handles(new_handle, handles, 2))
