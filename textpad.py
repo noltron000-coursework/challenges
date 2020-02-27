@@ -16,8 +16,8 @@ Example execution 2:
 """
 
 t9_num_to_letters = {
-	'0': [
-		' ',  # space-character
+	'0': [  # dictionary of arrays used.
+		' ',  # space-character.
 	],
 	'1': [
 		',',
