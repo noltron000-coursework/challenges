@@ -69,15 +69,14 @@ t9_num_to_letters = {
 	],
 }
 
-def t9_letters(rmn_string, prv_combos=None):
+
+def t9_letters(rmn_input, prv_combos=None):
 	if prv_combos is None:
 		prv_combos = ['']
-	if rmn_string == '':
+	if rmn_input == '':
 		return prv_combos
 
-	num = rmn_string[0]
-	rmn_string = rmn_string[1:]
-
+	num = rmn_input[0]
 	possible_letters = t9_num_to_letters[num]
 	new_combos = []
 
@@ -85,7 +84,8 @@ def t9_letters(rmn_string, prv_combos=None):
 		for letter in possible_letters:
 			new_combos.append(combo + letter)
 
-	return t9_letters(rmn_string, new_combos)
+	return t9_letters(rmn_input[1:], new_combos)
+
 
 print(t9_letters('23'))
 print(t9_letters('4663'))
